@@ -1,0 +1,20 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<string.h>
+int main() {
+    char str[17];
+   // scanf("%s0",str);
+   int sum=0;
+   fgets(str,sizeof(str),stdin);
+   char check[]="!abcdefghijklmnopqrstuvwxyz";
+   for(int i=0;str[i]!='\0';i++){
+       for(int j=0;check[j]!='\0';j++){
+           if(str[i]==check[j]){
+             sum=sum+j; //sum+=j;  
+           }
+       }
+   }
+   printf("%d",sum);
+
+    return 0;
+}
