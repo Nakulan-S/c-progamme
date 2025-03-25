@@ -12,11 +12,8 @@ int is_stepping(int n) {
 
 int main() {
     int begin, end;
-    
-    // Get input from user
     printf("Enter begin and end: ");
     scanf("%d %d", &begin, &end);
-    
     printf("Stepping Numbers: ");
     for (int i = begin; i <= end; i++) {
         if (is_stepping(i)) {
