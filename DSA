@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+// Function to check if a number is a stepping number
+int is_stepping(int n) {
+    while (n > 9) {  // Run while the number has more than 1 digit
+        int last = n % 10;         // Get last digit
+        int second_last = (n / 10) % 10;  // Get second last digit
+        if (abs(last - second_last) != 1) // Check difference
+            return 0;
+        n /= 10; // Remove last digit
+    }
+    return 1;
+}
+
+int main() {
+    int begin, end;
+    
+    // Get input from user
+    printf("Enter begin and end: ");
+    scanf("%d %d", &begin, &end);
+    
+    printf("Stepping Numbers: ");
+    for (int i = begin; i <= end; i++) {
+        if (is_stepping(i)) {
+            printf("%d ", i);
+        }
+    }
+    
+    return 0;
+}
